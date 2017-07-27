@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>be.ceau</groupId>
 	<artifactId>gpodder-directory-api</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>gpodder directory API</name>
 	<description>Java client for the gpodder directory API</description>
 	<url>https://github.com/mdewilde/gpodder-directory-api</url>
@@ -151,6 +151,11 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.25</version>
 		</dependency>
 	</dependencies>
 </project>

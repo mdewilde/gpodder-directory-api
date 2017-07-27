@@ -6,6 +6,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,6 +15,8 @@ import com.fasterxml.jackson.databind.ObjectReader;
 
 public class DirectoryAPI {
 
+	private static final Logger logger = LoggerFactory.getLogger(DirectoryAPI.class);
+	
 	private static final String SITE = "https://gpodder.net/";
 	
 	private static final ObjectReader TAG_LIST_READER = new ObjectMapper().reader().forType(new TypeReference<List<Tag>>() {});
@@ -31,6 +35,7 @@ public class DirectoryAPI {
 		}
 		String url = SITE + "api/2/tags/" + count + ".json";
 		String response = IOUtils.toString(new URL(url), StandardCharsets.UTF_8);
+		logger.trace("API request/response : {} -> {}", url, response);
 		return TAG_LIST_READER.readValue(response);
 	}
 	
@@ -77,6 +82,7 @@ public class DirectoryAPI {
 
 	private List<Podcast> getPodcasts(String url) throws IOException {
 		String response = IOUtils.toString(new URL(url), StandardCharsets.UTF_8);
+		logger.trace("API request/response : {} -> {}", url, response);
 		return PODCAST_LIST_READER.readValue(response);
 	}
 
