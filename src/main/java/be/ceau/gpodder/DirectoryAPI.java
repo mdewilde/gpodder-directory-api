@@ -18,6 +18,13 @@ public class DirectoryAPI {
 	private static final ObjectReader TAG_LIST_READER = new ObjectMapper().reader().forType(new TypeReference<List<Tag>>() {});
 	private static final ObjectReader PODCAST_LIST_READER = new ObjectMapper().reader().forType(new TypeReference<List<Podcast>>() {});
 
+	/**
+	 * 
+	 * @param count
+	 * @return
+	 * @throws IOException
+	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#retrieve-top-tags">tags call documentation</a>
+	 */
 	public List<Tag> getTags(int count) throws IOException {
 		if (count < 1) {
 			throw new IllegalArgumentException("count must be greater than 0");
@@ -27,6 +34,14 @@ public class DirectoryAPI {
 		return TAG_LIST_READER.readValue(response);
 	}
 	
+	/**
+	 * 
+	 * @param tag
+	 * @param count
+	 * @return
+	 * @throws IOException
+	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#retrieve-podcasts-for-tag">toplist call documentation</a>
+	 */
 	public List<Podcast> getPodcastsForTag(String tag, int count) throws IOException {
 		validateString(tag);
 		validateCount(count);
@@ -34,12 +49,26 @@ public class DirectoryAPI {
 		return getPodcasts(url);
 	}
 	
+	/**
+	 * 
+	 * @param count
+	 * @return
+	 * @throws IOException
+	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#podcast-toplist">toplist call documentation</a>
+	 */
 	public List<Podcast> getToplist(int count) throws IOException {
 		validateCount(count);
 		String url = SITE + "toplist/" + count + ".json";
 		return getPodcasts(url);
 	}
 
+	/**
+	 * 
+	 * @param query
+	 * @return
+	 * @throws IOException
+	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#podcast-search">search call documentation</a>
+	 */
 	public List<Podcast> search(String query) throws IOException {
 		validateString(query);
 		String url = SITE + "search.json?q=" + query;
