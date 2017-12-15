@@ -40,9 +40,12 @@ public class DirectoryAPI {
 	/**
 	 * 
 	 * @param count
-	 * @return
+	 *            maximum number of podcasts to get
+	 * @return a {@link List} of {@link Tag} instances, never {@code null}
 	 * @throws IOException
-	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#retrieve-top-tags">tags call documentation</a>
+	 *             as thrown during the web request
+	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#retrieve-top-tags">tags call
+	 *      documentation</a>
 	 */
 	public List<Tag> getTags(int count) throws IOException {
 		if (count < 1) {
@@ -58,8 +61,10 @@ public class DirectoryAPI {
 	 * 
 	 * @param tag
 	 * @param count
-	 * @return
+	 *            maximum number of podcasts to get
+	 * @return a {@link List} of {@link Podcast} instances, never {@code null}
 	 * @throws IOException
+	 *             as thrown during the web request
 	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#retrieve-podcasts-for-tag">toplist call documentation</a>
 	 */
 	public List<Podcast> getPodcastsForTag(String tag, int count) throws IOException {
@@ -72,9 +77,12 @@ public class DirectoryAPI {
 	/**
 	 * 
 	 * @param count
-	 * @return
+	 *            maximum number of podcasts to get
+	 * @return a {@link List} of {@link Podcast} instances, never {@code null}
 	 * @throws IOException
-	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#podcast-toplist">toplist call documentation</a>
+	 *             as thrown during the web request
+	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#podcast-toplist">toplist call
+	 *      documentation</a>
 	 */
 	public List<Podcast> getToplist(int count) throws IOException {
 		validateCount(count);
@@ -85,9 +93,12 @@ public class DirectoryAPI {
 	/**
 	 * 
 	 * @param query
-	 * @return
+	 *            {@link String} search term(s)
+	 * @return a {@link List} of {@link Podcast} instances, never {@code null}
 	 * @throws IOException
-	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#podcast-search">search call documentation</a>
+	 *             as thrown during the web request
+	 * @see <a href="https://gpoddernet.readthedocs.io/en/latest/api/reference/directory.html#podcast-search">search call
+	 *      documentation</a>
 	 */
 	public List<Podcast> search(String query) throws IOException {
 		validateString(query);
