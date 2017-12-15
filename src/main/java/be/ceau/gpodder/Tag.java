@@ -15,6 +15,9 @@
 */
 package be.ceau.gpodder;
 
+/**
+ * A tag is a category or genre by which podcasts are organized in gpodder
+ */
 public class Tag {
 
 	private String title;
