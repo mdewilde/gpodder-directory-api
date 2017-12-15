@@ -22,9 +22,11 @@ List<Podcast> podcasts = new DirectoryAPI().search("keyword");
 ### Maven Central
 Include this project directly from Maven Central
 ```XML
-<groupId>be.ceau</groupId>
-<artifactId>gpodder-directory-api</artifactId>
-<version>${project.version}</version>
+<dependency>
+	<groupId>be.ceau</groupId>
+	<artifactId>gpodder-directory-api</artifactId>
+	<version>${project.version}</version>
+</dependency>
 ```
 
 ### GnuPG public key
