@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>be.ceau</groupId>
 	<artifactId>gpodder-directory-api</artifactId>
-	<version>0.1.2</version>
+	<version>0.2.0</version>
 	<name>gpodder directory API</name>
 	<description>Java client for the gpodder directory API</description>
 	<url>https://github.com/mdewilde/gpodder-directory-api</url>
@@ -126,7 +126,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.6</version>
+				<version>3.7</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

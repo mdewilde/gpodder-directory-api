@@ -1,5 +1,5 @@
 /*
-	Copyright 2017 Marceau Dewilde <m@ceau.be>
+	Copyright 2018 Marceau Dewilde <m@ceau.be>
 	
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 package be.ceau.gpodder;
 
 /**
- * A tag is a category or genre by which podcasts are organized in gpodder
+ * A tag is a category or genre by which podcasts are organized in gpodder.net
  */
 public class Tag {
 
